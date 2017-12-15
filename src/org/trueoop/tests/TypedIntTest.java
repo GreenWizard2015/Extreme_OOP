@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.Test;
-import org.omg.CORBA.DynAnyPackage.InvalidValue;
 import org.trueoop.app.IEnviroment;
 import org.trueoop.app.IInput;
 import org.trueoop.app.IValue;
