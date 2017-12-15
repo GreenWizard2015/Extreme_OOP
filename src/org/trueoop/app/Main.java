@@ -3,6 +3,7 @@ package org.trueoop.app;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Started.");
+		IApplication app = new Application();
+		app.run(args);
 	}
 }
