@@ -1,7 +1,4 @@
-package org.trueoop.tests;
-
-import org.trueoop.app.IEnviroment;
-import org.trueoop.app.IInput;
+package org.trueoop.app;
 
 public class Enviroment implements IEnviroment {
 
