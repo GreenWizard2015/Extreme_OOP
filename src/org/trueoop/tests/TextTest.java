@@ -23,7 +23,7 @@ public class TextTest {
 		task.run(env);
 
 		verify(env, times(1)).output();
-		verify(output, times(1)).Str(txt);
+		verify(output, times(1)).println(txt);
 		verifyNoMoreInteractions(env, output);
 	}
 

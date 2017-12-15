@@ -10,6 +10,6 @@ public class Text implements ITask {
 
 	@Override
 	public void run(IEnviroment env) {
-		env.output().Str(_text);
+		env.output().println(_text);
 	}
 }
