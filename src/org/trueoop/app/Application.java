@@ -12,9 +12,10 @@ public class Application implements IApplication {
 		this(null);
 	}
 
-	public void run(String[] args) {
+	@Override
+	public void run(IEnviroment enviroment) {
 		if(null != _task)
-			_task.run();		
+			_task.run(enviroment);
 	}
 
 }

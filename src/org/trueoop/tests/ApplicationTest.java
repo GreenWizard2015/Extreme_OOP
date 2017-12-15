@@ -3,13 +3,10 @@ package org.trueoop.tests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.stubbing.Answer;
 
 import static org.mockito.Mockito.*;
 import org.trueoop.app.*;
-
-import junit.framework.Assert;
 
 public class ApplicationTest {
 
@@ -24,7 +21,7 @@ public class ApplicationTest {
 		ITask task = mock(ITask.class);
 		IApplication app = new Application(task);
 		app.run(null);
-		verify(task, times(1)).run();
+		verify(task, times(1)).run(any(IEnviroment.class));
 	}
 
 	@Test
@@ -34,14 +31,14 @@ public class ApplicationTest {
 		when(input.Int()).thenReturn(val);
 		
 		ITask task = mock(ITask.class);
-		doAnswer((Answer) inv -> {
-			Object[] args = inv.getArguments();
-			IEnviroment env = (IEnviroment)args[0];
+		doAnswer((Answer<?>) inv -> {
+			IEnviroment env = (IEnviroment)inv.getArguments()[0];
 			assertEquals(val, env.input().Int());
-		}).when(task).run();
+			return null;
+		}).when(task).run(any());
 		
 		IApplication app = new Application(task);
-		app.run(null);
+		app.run(new Enviroment(input));
 		
 		verify(input, times(1)).Int();
 	}

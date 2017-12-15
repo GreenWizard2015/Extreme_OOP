@@ -1,5 +1,5 @@
 package org.trueoop.app;
 
 public interface ITask {
-	void run();
+	void run(IEnviroment enviroment);
 }

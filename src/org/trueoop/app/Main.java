@@ -4,6 +4,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		IApplication app = new Application();
-		app.run(args);
+		app.run(null);
 	}
 }
