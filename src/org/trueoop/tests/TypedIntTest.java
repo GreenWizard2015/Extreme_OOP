@@ -4,12 +4,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.Test;
-import org.trueoop.app.IEnviroment;
-import org.trueoop.app.IInput;
-import org.trueoop.app.IOutput;
-import org.trueoop.app.IValue;
-import org.trueoop.app.Output;
-import org.trueoop.app.TypedInt;
+import org.trueoop.app.*;
 
 public class TypedIntTest {
 

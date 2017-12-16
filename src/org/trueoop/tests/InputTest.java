@@ -3,9 +3,8 @@ package org.trueoop.tests;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.mockito.Matchers.same;
 import static org.mockito.Mockito.*;
-import static junit.framework.Assert.*;
+import static org.junit.Assert.*;
 
 import java.util.Scanner;
 import org.trueoop.app.IInput;

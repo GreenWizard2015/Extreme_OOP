@@ -6,9 +6,6 @@ import org.junit.Test;
 import org.trueoop.app.*;
 
 public class FormattedTextTest {
-
-	private abstract class FakeInt implements IValue<Integer>{		
-	}
 	
 	@Test
 	public void formatInts() {

@@ -8,9 +8,6 @@ import org.trueoop.app.*;
 
 public class CachedTest {
 
-	private abstract class FakeInt implements IValue<Integer>{		
-	}
-	
 	@Test
 	public void readValueOnlyOnce() {
 		final Integer correctValue = 587;
