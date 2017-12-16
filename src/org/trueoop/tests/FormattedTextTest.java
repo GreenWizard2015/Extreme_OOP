@@ -17,8 +17,7 @@ public class FormattedTextTest {
 		IEnviroment env = mock(IEnviroment.class);
 		when(env.output()).thenReturn(output);
 
-		IValue<Integer> fakeInt = mock(FakeInt.class);
-		when(fakeInt.value(any())).thenReturn(value);
+		IValue<Integer> fakeInt = FakeInt.with(value);
 		
 		ITask task = new FormattedText(fmt, fakeInt);
 		task.run(env);

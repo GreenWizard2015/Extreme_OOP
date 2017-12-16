@@ -11,8 +11,7 @@ public class CachedTest {
 	@Test
 	public void readValueOnlyOnce() {
 		final Integer correctValue = 587;
-		IValue<Integer> fake = mock(FakeInt.class);
-		when(fake.value(any())).thenReturn(correctValue);		
+		IValue<Integer> fake = FakeInt.with(correctValue);		
 
 		IValue<Integer> val = new Cached<Integer>(fake);
 		for (int i = 0; i < 10; i++) 

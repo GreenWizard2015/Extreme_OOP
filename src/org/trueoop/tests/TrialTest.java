@@ -14,8 +14,7 @@ public class TrialTest {
 	public void hitsSpecificTimes(){
 		final int N = 25;
 		Dartsboard board = mock(Dartsboard.class);
-		IValue<Integer> trialsN = mock(FakeInt.class);
-		when(trialsN.value(any())).thenReturn(N);
+		IValue<Integer> trialsN = FakeInt.with(N);
 
 		IValue<Double> trial = new Trial(board, trialsN);
 		trial.value(null);
@@ -36,8 +35,7 @@ public class TrialTest {
 			}
 		});
 		
-		IValue<Integer> trialsN = mock(FakeInt.class);
-		when(trialsN.value(any())).thenReturn(totalN);
+		IValue<Integer> trialsN = FakeInt.with(totalN);
 
 		IValue<Double> trial = new Trial(board, trialsN);
 		assertEquals(answer, trial.value(null), 0.00001);

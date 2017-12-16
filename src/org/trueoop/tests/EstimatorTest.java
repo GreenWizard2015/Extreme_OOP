@@ -11,9 +11,7 @@ import org.trueoop.app.*;
 public class EstimatorTest {
 
 	private void returnZeroTest(int N) {
-		IValue<Integer> trialsN = mock(FakeInt.class);
-		when(trialsN.value(any())).thenReturn(0);
-		
+		IValue<Integer> trialsN = FakeInt.with(N);		
 		IValue<Double> est = new Estimator(null, trialsN);
 		assertEquals(0.0, est.value(null), 0.000001);
 	}
@@ -29,8 +27,7 @@ public class EstimatorTest {
 		final int N = 25;
 		IValue<Double> trial = mock(Trial.class);
 		
-		IValue<Integer> trialsN = mock(FakeInt.class);
-		when(trialsN.value(any())).thenReturn(N);
+		IValue<Integer> trialsN = FakeInt.with(N);
 		
 		IValue<Double> est = new Estimator(trial, trialsN);
 		est.value(null);
@@ -55,8 +52,7 @@ public class EstimatorTest {
 			}
 		});
 		
-		IValue<Integer> trialsN = mock(FakeInt.class);
-		when(trialsN.value(any())).thenReturn(data.length);
+		IValue<Integer> trialsN = FakeInt.with(data.length);
 		
 		IValue<Double> est = new Estimator(trial, trialsN);
 		assertEquals(avg, est.value(null), 0.00001);
