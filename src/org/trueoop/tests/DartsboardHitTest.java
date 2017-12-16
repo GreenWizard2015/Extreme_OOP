@@ -13,9 +13,9 @@ import org.trueoop.app.*;
 @RunWith(value = Parameterized.class)
 public class DartsboardHitTest {
 	@Parameter(0)
-	private double _dist;
+	public double _dist;
 	@Parameter(1)
-	private boolean _answer;
+	public boolean _answer;
 
   @Parameters(name = "{index}: dist {0} => {1})")
   public static Collection<Object[]> data() {
@@ -33,7 +33,7 @@ public class DartsboardHitTest {
 		when(pt.dist()).thenReturn(_dist);
 		
 		IHitPoints pts = mock(IHitPoints.class);
-		when(pts.next()).thenAnswer(pt);
+		when(pts.next()).thenReturn(pt);
 		
 		Dartsboard board = new Dartsboard(pts);
 		assertEquals(_answer, board.nextHit());
