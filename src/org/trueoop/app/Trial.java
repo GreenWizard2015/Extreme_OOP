@@ -19,7 +19,7 @@ public class Trial implements IValue<Double> {
 				hitted++;
 		}
 		if(0 < N)
-			return (double)hitted / N;
+			return 4.0 * (double)hitted / N;
 		
 		return 0.0;
 	}
