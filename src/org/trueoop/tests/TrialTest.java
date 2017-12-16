@@ -46,7 +46,7 @@ public class TrialTest {
 	@Test
 	public void returnAvgTrials(){
 		checkAvgTrials(0, 0, 0.0);
-		checkAvgTrials(5, 10, 0.5);
-		checkAvgTrials(30, 10, 1.0);
+		checkAvgTrials(5, 10, 0.5 * 4);
+		checkAvgTrials(30, 10, 1.0 * 4);
 	}
 }
