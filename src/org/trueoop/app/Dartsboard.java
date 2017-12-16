@@ -9,7 +9,6 @@ public class Dartsboard {
 	}
 
 	public boolean nextHit() {
-		return false;
+		return _points.next().dist() <= 1.0;
 	}
-
 }
