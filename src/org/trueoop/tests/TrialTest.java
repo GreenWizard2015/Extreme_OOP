@@ -32,7 +32,7 @@ public class TrialTest {
 			@Override
 			public Boolean answer(InvocationOnMock _) throws Throwable {
 				ind++;
-				return ind <= hits;
+				return ind < hits;
 			}
 		});
 		
