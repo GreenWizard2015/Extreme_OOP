@@ -38,8 +38,27 @@ public class ApplicationTest {
 		}).when(task).run(any());
 		
 		IApplication app = new Application(task);
-		app.run(new Enviroment(input));
+		app.run(new Enviroment(input, null));
 		
 		verify(input, times(1)).Int();
+	}
+
+	@Test
+	public void pushingOutput() {
+		final String val = "5478";
+		IOutput output = mock(IOutput.class);
+		
+		ITask task = mock(ITask.class);
+		doAnswer((Answer<?>) inv -> {
+			IEnviroment env = (IEnviroment)inv.getArguments()[0];
+			env.output().println(val);
+			return null;
+		}).when(task).run(any());
+		
+		IApplication app = new Application(task);
+		app.run(new Enviroment(null, output));
+		
+		verify(output, times(1)).println(val);
+		verifyNoMoreInteractions(output);
 	}
 }
